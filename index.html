@@ -8,6 +8,15 @@
             text-align: center;
         }
 
+        .mainContent{
+            background-color: rgb(172, 240, 255);
+            margin: auto;
+            width: 40%;
+            border-radius: 5rem;
+            height: 50%;
+            border: 2px solid black;
+        }
+
         h1 {
             color: #333;
         }
@@ -19,7 +28,7 @@
         }
 
         button {
-            background-color: #4CAF50;
+            background-color: #0a6170;
             border: none;
             color: white;
             padding: 10px 20px;
@@ -34,23 +43,20 @@
         }
 
         button:hover {
-            background-color: #45a049;
-        }
-
-        #incrementBtn:hover {
-            transform: scale(1.1);
-        }
-
-        #decrementBtn:hover {
+            background-color: #caffff;
+            color: black;
+            font-weight: bold;
             transform: scale(1.1);
         }
     </style>
 </head>
 <body>
-    <h1>Counter App</h1>
-    <p id="counter">0</p>
-    <button id="incrementBtn">Increment</button>
-    <button id="decrementBtn">Decrement</button>
+    <main class="mainContent">
+        <h1>Counter App</h1>
+        <p id="counter">0</p>
+        <button id="incrementBtn">Increment</button>
+        <button id="decrementBtn">Decrement</button>
+    </main>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -67,8 +73,12 @@
             });
 
             document.getElementById('decrementBtn').addEventListener('click', () => {
-                counterValue--;
-                updateCounter();
+                if (counterValue === 0) {
+                    alert('The count is already 0. Please increase the count first.');
+                } else {
+                    counterValue--;
+                    updateCounter();
+                }
             });
         });
     </script>
