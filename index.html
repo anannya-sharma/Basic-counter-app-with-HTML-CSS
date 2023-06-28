@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #counter {
+            font-size: 48px;
+            margin-bottom: 20px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #incrementBtn:hover {
+            transform: scale(1.1);
+        }
+
+        #decrementBtn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter App</h1>
+    <p id="counter">0</p>
+    <button id="incrementBtn">Increment</button>
+    <button id="decrementBtn">Decrement</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const counter = document.getElementById('counter');
+            let counterValue = 0;
+
+            const updateCounter = () => {
+                counter.textContent = counterValue;
+            };
+
+            document.getElementById('incrementBtn').addEventListener('click', () => {
+                counterValue++;
+                updateCounter();
+            });
+
+            document.getElementById('decrementBtn').addEventListener('click', () => {
+                counterValue--;
+                updateCounter();
+            });
+        });
+    </script>
+</body>
+</html>
